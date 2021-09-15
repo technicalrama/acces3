@@ -1,0 +1,165 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.apihotels</groupId>
+    <artifactId>aces3</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.apihotels</groupId>
+  <artifactId>aces-web-ejb</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+     <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+<dependency>
+    <groupId>javax</groupId>
+    <artifactId>javaee-api</artifactId>
+    <version>${javax.version}</version>
+    <scope>provided</scope>
+</dependency>
+   <!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
+<dependency>
+    <groupId>org.apache.xmlbeans</groupId>
+    <artifactId>xmlbeans</artifactId>
+    <version>${xmlbeans.version}</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/jasperreports/jasperreports -->
+<dependency>
+    <groupId>jasperreports</groupId>
+    <artifactId>jasperreports</artifactId>
+    <version>${jasperreports.version}</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.lowagie/itext -->
+<dependency>
+    <groupId>com.lowagie</groupId>
+    <artifactId>itext</artifactId>
+    <version>${itext.version}</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-collections4</artifactId>
+    <version>${commons-collections4.version}</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+<dependency>
+    <groupId>commons-beanutils</groupId>
+    <artifactId>commons-beanutils</artifactId>
+    <version>${commons-beanutils.version}</version>
+</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>aces-web-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>schedule-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>tenant-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>supplier-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>billing-period-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>reservation-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>checkin-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>notes-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>invoice-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>invoice-workflow-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>report-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>user-account-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>page-fragments-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>doc-repo-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>business-objects</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>email-template-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>notification-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>comms-service-remote</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+<dependency>
+			<groupId>com.apihotels</groupId>
+			<artifactId>api-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<optional>true</optional>
+		</dependency>
+  </dependencies>
+</project>
