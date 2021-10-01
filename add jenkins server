@@ -1,0 +1,58 @@
+def HOST = params.Environment
+
+if ( HOST == "PROD-ACESACTIVEMQ" ){
+	SERVER="PROD-ACESACTIVEMQ"
+   	} 
+if ( HOST == "PROD-ACESIIWEBLOGICWEB" ){
+    SERVER="PROD-ACESIIWEBLOGICWEB"
+	} 
+if ( HOST == "PROD-ACESIIWLII" ){
+    SERVER="PROD-ACESIIWLII"
+	} 
+if ( HOST == "PROD-ACESLATAM" ){
+	SERVER="PROD-ACESLATAM"
+	} 
+if ( HOST == "PROD-ACESSERICES" ){
+	SERVER="PROD-ACESSERICES"
+	}  
+if ( HOST == "PROD-ACESSUPPLIER" ){
+	SERVER="PROD-ACESSUPPLIER"
+	}  
+if ( HOST == "PROD-ACESTCSFTPCLIENT" ){
+	SERVER="PROD-ACESTCSFTPCLIENT"
+	}
+if ( HOST == "PROD-ACESWEB" ){
+	SERVER="PROD-ACESWEB"
+	} 
+if ( HOST == "PROD-ACESWEBLOGICMQ" ){
+	SERVER="PROD-ACESWEBLOGICMQ"
+	} 
+if ( HOST == "ALL" ){
+	SERVER="aces2_prod_2"
+	}	
+
+pipeline{
+agent {
+        label 'SingleClickDeploySlave'
+    }
+//     options {
+// 	  ansiColor("xterm")
+//     }
+    parameters {
+		choice (choices: [ 'PROD-ACESACTIVEMQ', 'PROD-ACESIIWEBLOGICWEB', 'PROD-ACESIIWLII', 'PROD-ACESLATAM', 'PROD-ACESSERICES', 'PROD-ACESSUPPLIER', 'PROD-ACESTCSFTPCLIENT', 'PROD-ACESWEB', 'PROD-ACESWEBLOGICMQ', 'ALl'],
+        description: 'target host',
+        name: 'Environment')
+    }
+	stages{
+	 	stage ('Run ansible job'){
+			steps{
+				script{
+					echo "$SERVER"
+					ansibleTower( towerServer: 'awx', towerCredentialsId: 'ansible-awx', templateType: 'job', jobTemplate: 'Prod Aces2properties', importTowerLogs: true, inventory: "", jobTags: '', skipJobTags: '', limit: "$SERVER", removeColor: false, verbose: true, credential: '', extraVars: '''--- 
+''', async: false ) 
+				}
+			}
+		}	
+	}	
+}	
+ 
